@@ -19,4 +19,6 @@
 -(void)scrollToTop:(id)args;
 -(void)scrollToBottom:(id)args;
 
+-(void)enableCookieAcceptPolicyAlways:(id)userAgent;
+
 @end

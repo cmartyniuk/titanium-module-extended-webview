@@ -42,4 +42,18 @@
     }, YES);
 }
 
+-(void)enableCookieAcceptPolicyAlways:(id)args
+{
+    TiThreadPerformOnMainThread(^{
+        [(TiUIWebView *)[self view] enableCookieAcceptPolicyAlways:args];
+    }, YES);
+}
+
+-(void)setUserAgent:(id)args
+{
+    TiThreadPerformOnMainThread(^{
+        [(TiUIWebView *)[self view] setUserAgent:args];
+    }, YES);
+}
+
 @end

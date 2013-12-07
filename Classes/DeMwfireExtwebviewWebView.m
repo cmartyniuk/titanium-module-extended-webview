@@ -11,7 +11,6 @@
 
 @implementation DeMwfireExtwebviewWebView
 
-
 -(void)setZoomScale_:(id)value withObject:(id)property
 {
     CGFloat scale = [TiUtils floatValue:value def:0];
@@ -52,6 +51,24 @@
     CGPoint newOffset = CGPointMake(bottomWidth,bottomHeight);
     
     [currScrollView setContentOffset:newOffset animated:animated];
+}
+
+-(void)enableCookieAcceptPolicyAlways:(id)args
+{
+    // http://stackoverflow.com/questions/14448373/3rd-party-cookies-in-an-ios6-uiwebview/14465407#14465407
+    
+    NSHTTPCookieStorage *storage = [NSHTTPCookieStorage sharedHTTPCookieStorage];
+    storage.cookieAcceptPolicy = NSHTTPCookieAcceptPolicyAlways;
+    
+}
+
+-(void)setUserAgent:(id)userAgent
+{
+    // http://stackoverflow.com/questions/8487581/uiwebview-ios5-changing-user-agent
+    
+    NSDictionary *dictionary = [NSDictionary dictionaryWithObjectsAndKeys:[TiUtils stringValue:userAgent], @"UserAgent", nil];
+    [[NSUserDefaults standardUserDefaults] registerDefaults:dictionary];
+
 }
 
 @end
