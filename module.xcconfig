@@ -16,12 +16,12 @@
 //
 // OTHER_LDFLAGS[sdk=iphoneos4*]=$(inherited) -framework Foo
 // OTHER_LDFLAGS[sdk=iphonesimulator4*]=$(inherited) -framework Foo
-//
+//OTHER_LDFLAGS=$(inherited) TiUIWebView.o TiUIWebViewProxy.o
 //
 // How to add a compiler define:
 //
 // OTHER_CFLAGS=$(inherited) -DFOO=1
-OTHER_CFLAGS=$(inherited)-DUSE_TI_UIWEBVIEW
+OTHER_CFLAGS=$(inherited) -DUSE_TI_UIWEBVIEW
 //
 //
 // IMPORTANT NOTE: always use $(inherited) in your overrides
